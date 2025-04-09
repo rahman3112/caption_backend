@@ -1,0 +1,63 @@
+2025-04-09 21:28:10,082 - INFO - Starting video processing for uploads\video-1744214285185.mp4
+2025-04-09 21:28:10,082 - INFO - Extracting audio from uploads\video-1744214285185.mp4 to uploads/audio.mp3
+2025-04-09 21:28:10,807 - INFO - Audio extraction completed.
+2025-04-09 21:28:10,807 - INFO - Loading Whisper model: medium
+2025-04-09 21:28:42,808 - ERROR - An error occurred during video processing.
+Traceback (most recent call last):
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\whisper\__init__.py", line 82, in _download
+    buffer = source.read(8192)
+             ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\http\client.py", line 479, in read
+    s = self.fp.read(amt)
+        ^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1252, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\ssl.py", line 1104, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Projects\caption_generator\server\process_video.py", line 154, in <module>
+    process_video(input_video, output_text)
+  File "E:\Projects\caption_generator\server\process_video.py", line 139, in process_video
+    transcript = transcribe_audio(audio_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\caption_generator\server\process_video.py", line 113, in transcribe_audio
+    model = whisper.load_model(model_size)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\whisper\__init__.py", line 137, in load_model
+    checkpoint_file = _download(_MODELS[name], download_root, in_memory)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\whisper\__init__.py", line 74, in _download
+    with tqdm(
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\tqdm\std.py", line 1140, in __exit__
+    self.close()
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\tqdm\std.py", line 1302, in close
+    self.display(pos=0)
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\tqdm\std.py", line 1495, in display
+    self.sp(self.__str__() if msg is None else msg)
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\tqdm\std.py", line 459, in print_status
+    fp_write('\r' + s + (' ' * max(last_len[0] - len_s, 0)))
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\tqdm\std.py", line 452, in fp_write
+    fp.write(str(s))
+  File "C:\Users\owner\AppData\Roaming\Python\Python312\site-packages\tqdm\utils.py", line 196, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument
+2025-04-09 21:28:54,917 - INFO - Starting video processing for uploads\video-1744214332229.mp4
+2025-04-09 21:28:54,917 - INFO - Extracting audio from uploads\video-1744214332229.mp4 to uploads/audio.mp3
+2025-04-09 21:28:55,107 - INFO - Audio extraction completed.
+2025-04-09 21:28:55,107 - INFO - Loading Whisper model: medium
+2025-04-09 21:32:40,786 - INFO - Model loaded successfully.
+2025-04-09 21:32:40,786 - INFO - Transcribing audio: uploads/audio.mp3
+2025-04-09 21:32:55,620 - INFO - Transcription completed.
+2025-04-09 21:32:55,623 - INFO - Saving transcript to uploads\output-video-1744214332229.mp4
+2025-04-09 21:32:55,623 - INFO - Transcript saved.
+2025-04-09 21:32:55,623 - INFO - Video processing complete.
