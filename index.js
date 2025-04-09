@@ -31,7 +31,7 @@ app.post('/upload', upload.single('video'), (req, res) => {
   console.log(`Processing video: ${videoPath} -> ${outputPath}`); // Log file paths
 
   // Use 'py' launcher for Windows compatibility
-  const pythonCmd = 'py';
+  const pythonCmd = 'python3';
 
   console.log(`Executing command: ${pythonCmd} process_video.py "${videoPath}" "${outputPath}"`); // Log command
   exec(
